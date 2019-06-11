@@ -1,0 +1,18 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CRedisPublisher	redis_publisher.cpp	/^CRedisPublisher::CRedisPublisher():_event_base(0),$/;"	f	class:CRedisPublisher
+CRedisPublisher	redis_publisher.h	/^class CRedisPublisher$/;"	c
+REDIS_PUBLISHER_H	redis_publisher.h	2;"	d
+_event_base	redis_publisher.h	/^    event_base *_event_base;$/;"	m	class:CRedisPublisher
+_event_sem	redis_publisher.h	/^    sem_t _event_sem;$/;"	m	class:CRedisPublisher
+_event_thread	redis_publisher.h	/^    pthread_t _event_thread;$/;"	m	class:CRedisPublisher
+_redis_context	redis_publisher.h	/^    redisAsyncContext *_redis_context;$/;"	m	class:CRedisPublisher
+connect	redis_publisher.cpp	/^bool CRedisPublisher::connect()$/;"	f	class:CRedisPublisher
+disconnect	redis_publisher.cpp	/^bool CRedisPublisher::disconnect()$/;"	f	class:CRedisPublisher
+init	redis_publisher.cpp	/^bool CRedisPublisher::init()$/;"	f	class:CRedisPublisher
+uninit	redis_publisher.cpp	/^bool CRedisPublisher::uninit()$/;"	f	class:CRedisPublisher
+~CRedisPublisher	redis_publisher.cpp	/^CRedisPublisher::~CRedisPublisher()$/;"	f	class:CRedisPublisher
