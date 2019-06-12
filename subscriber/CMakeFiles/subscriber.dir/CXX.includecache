@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/cat/mycode/redis/redistest/subscriber/redis_subscriber.cpp
+stddef.h
+-
+assert.h
+-
+string.h
+-
+redis_subscriber.h
+/home/cat/mycode/redis/redistest/subscriber/redis_subscriber.h
+
+/home/cat/mycode/redis/redistest/subscriber/redis_subscriber.h
+stdlib.h
+-
+hiredis/async.h
+-
+hiredis/adapters/libevent.h
+-
+string
+-
+vector
+-
+unistd.h
+-
+pthread.h
+-
+semaphore.h
+-
+boost/functional.hpp
+-
+
+/home/cat/mycode/redis/redistest/subscriber/subscriber.cpp
+redis_subscriber.h
+/home/cat/mycode/redis/redistest/subscriber/redis_subscriber.h
+

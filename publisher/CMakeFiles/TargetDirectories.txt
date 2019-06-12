@@ -1,0 +1,3 @@
+/home/cat/mycode/redis/redistest/publisher/CMakeFiles/rebuild_cache.dir
+/home/cat/mycode/redis/redistest/publisher/CMakeFiles/publisher.dir
+/home/cat/mycode/redis/redistest/publisher/CMakeFiles/edit_cache.dir

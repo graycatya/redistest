@@ -1,0 +1,1 @@
+/usr/bin/c++  -g  -rdynamic CMakeFiles/subscriber.dir/redis_subscriber.cpp.o CMakeFiles/subscriber.dir/subscriber.cpp.o  -o build/PC/Debug/Bin/subscriber -lhiredis -levent -lpthread -lhiredis -levent -lpthread 

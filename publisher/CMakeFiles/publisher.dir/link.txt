@@ -1,0 +1,1 @@
+/usr/bin/c++  -g  -rdynamic CMakeFiles/publisher.dir/publisher.cpp.o CMakeFiles/publisher.dir/redis_publisher.cpp.o  -o build/PC/Debug/Bin/publisher -lhiredis -levent -lpthread -lhiredis -levent -lpthread 
