@@ -178,8 +178,6 @@ void *CRedisSubscriber::event_thread(void *data)
 
 	CRedisSubscriber *self_this = reinterpret_cast<CRedisSubscriber *>(data);
 	return self_this->event_proc();
-
-
 }
 
 void *CRedisSubscriber::event_proc()
