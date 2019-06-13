@@ -74,7 +74,19 @@
 * API:
 	1. redisAsyncContext *redisAsyncConnect(const char *ip, int port);
 		* 异步连接redis服务器
-	2. 
+	2. redisLibeventAttach
+		* libevent 事件注册
+	3. int redisAsyncSetConnectCallback(redisAsyncContext *ac, redisConnectCallback *fn);
+		* 用于设置异步上下文中的建链回调函数。
+	4. void redisAsyncDisconnect(redisAsyncContext *);
+		* 断开异步连接
+	5. void redisAsyncFree(redisAsyncContext *);
+		* 释放内存
+	6. int redisAsyncCommand(redisAsyncContext *ac, redisCallbackFn *fn, void *privdata, const char *format, ...);
+		* redisAsyncCommand函数，是异步API中用于向Redis发送命令的函数。该函数与同步API中发送命令的函数redisCommand类似，同样支持printf式的可变参数。
+		这里的fn和privdata分别表示收到命令回复后要调用的回调函数及其参数。因为Redis是单线程处理命令，因此当客户端使用异步API与事件库的结合之后，命令就自动的管道化了。也就是客户端在单线程模式下，发送命令的顺序和接收回复的顺序是一致的。因此，当发送命令时，就会将回调函数fn和参数privdata封装成回调结构redisCallback，并将该结构记录到单链表或者字典中。当收到回复后，就会依次得到链表或者字典中的redisCallback结构，调用其中的回调函数。
+
+
 
 
 <h3 id="5">5.publisher - 发布者代码分析</h3>
