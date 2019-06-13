@@ -7,8 +7,6 @@
 	* [5.1 CRedisPublisher - 实现类](#6)
 
 
-本教程摘自实验楼(www.shiyanlou.com)
-
 <h2 id="1">1.项目简介</h2>
 订阅，取消订阅和发布实现了发布/订阅消息范式(引自wikipedia)，发送者（发布者）不是计划发送消息给特定的接收者（订阅者）。而是发布的消息分到不同的频道，不需要知道什么样的订阅者订阅。
 
@@ -72,9 +70,11 @@
 
 <h3 id="4">4.hiredisAPI简介</h3>
 	Hiredis中的异步API函数需要与事件库（libevent,libev, ev）一起工作。因为事件循环的机制，异步环境中的命令是自动管道化的。因为命令是异步发送的，因此发送命令时，必要情况下，需要提供一个回调函数，以便在收到命令回复时调用该函数。
-	
+
 * API:
 	1. redisAsyncContext *redisAsyncConnect(const char *ip, int port);
+		* 异步连接redis服务器
+	2. 
 
 
 <h3 id="5">5.publisher - 发布者代码分析</h3>
