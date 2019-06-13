@@ -5,8 +5,8 @@
 * [4.hiredisAPI简介](#4)
 * [5.publisher - 发布者代码分析](#5)
 	* [5.1 CRedisPublisher - 实现类](#6)
-* [6.publisher - 发布者代码分析](#7)
-	* [6.1 publisher - 发布者代码分析](#8)
+* [6.Subscriber - 订阅者代码分析](#7)
+	* [6.1 CRedisSubscriber - 实现类](#8)
 
 <h2 id="1">1.项目简介</h2>
 订阅，取消订阅和发布实现了发布/订阅消息范式(引自wikipedia)，发送者（发布者）不是计划发送消息给特定的接收者（订阅者）。而是发布的消息分到不同的频道，不需要知道什么样的订阅者订阅。
@@ -105,6 +105,7 @@
 		* 创建事件处理线程
 		* 设置连接回调 
 		* 设置断开连接回调
+		* 给信号值加一
 	4. disconnect
 		* 断开连接
 		* 释放回调
@@ -122,6 +123,34 @@
 		* 事件处理
 
 
-<h3 id="7">6.publisher - 发布者代码分析</h3>
+<h3 id="7">6.Subscriber - 订阅者代码分析</h3>
 
-<h3 id="8">6.1 publisher - 发布者代码分析</h3>
+<h3 id="8">6.1 CRedisSubscriber - 实现类</h3>
+
+* CRedisPublisher 
+	1. init 
+		* 初始化libevent, 信号量
+	2. uninit 
+		* 释放空间
+	3. connect 
+		* 异步连接到redis服务器
+		* 将(libevent)事件绑定到redis服务上
+		* 创建事件处理线程
+		* 设置连接回调 
+		* 设置断开连接回调
+		* 给信号值加一
+	4. disconnect
+		* 断开连接
+		* 释放回调
+	5. subscribe
+		* 接收订阅的消息
+	6. connect_callback
+		* 连接成功
+	7. disconnect_callback
+		* 断开连接
+	8. command_callback
+		* 执行命令回调
+	9. event_thread
+		* 事件处理线程
+	10. event_proc
+		* 事件处理
