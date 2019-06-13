@@ -6,3 +6,11 @@
 
 ![思维图-publisher](./img/publisher.png)
 
+订阅者对一个或多个频道感兴趣，只需接收感兴趣的消息，不需要知道什么样的发布者发布的。
+
+![思维图-subscribe](./img/subscribe.png)
+
+这种发布者和订阅者的解耦合可以带来更大的扩展性和更加动态的网络拓扑。
+
+
+* publisher - 发布者
