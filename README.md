@@ -71,9 +71,10 @@
 
 
 <h3 id="4">4.hiredisAPI简介</h3>
-
+	Hiredis中的异步API函数需要与事件库（libevent,libev, ev）一起工作。因为事件循环的机制，异步环境中的命令是自动管道化的。因为命令是异步发送的，因此发送命令时，必要情况下，需要提供一个回调函数，以便在收到命令回复时调用该函数。
+	
 * API:
-	1. 
+	1. redisAsyncContext *redisAsyncConnect(const char *ip, int port);
 
 
 <h3 id="5">5.publisher - 发布者代码分析</h3>
