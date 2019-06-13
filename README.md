@@ -2,6 +2,7 @@
 * [1.项目简介](#1)
 * [2.信号量简介](#2)
 * [3.libevent简介](#3)
+* [4.hiredisAPI简介](#4)
 * [5.publisher - 发布者代码分析](#5)
 	* [5.1 CRedisPublisher - 实现类](#6)
 
@@ -46,6 +47,34 @@
 		2. 初始化信号量sem_init(&sem1,0,1);
 		3. sem_post和sem_wait函数配合使用来达到线程同步
 		4. 释放信号量int sem_destroy (&sem1);
+
+<h3 id="3">3.libevent简介</h3>
+* Libevent是开源社区一款高性能的I/O框架库，其具有如下特点：
+	1. 跨平台支持。Libevent支持Linux、UNIX和Windows。
+
+	2. 统一事件源。libevent对i/o事件、信号和定时事件提供统一的处理。
+
+	3. 线程安全。libevent使用libevent_pthreads库来提供线程安全支持。
+
+	4. 基于reactor模式的实现。
+
+* API:
+	1. struct event_base *event_base_new(void);
+		* 分配并且返回一个新的具有默认设置的 event_base。函数会检测环境变量,返回一个到 event_base 的指针。如果发生错误,则返回 NULL。选择各种方法时,函数会选择 OS 支持的最快方法。
+	2. void event_base_free(struct event_base *base);
+		* 有申请就有释放
+	3. int event_base_dispatch(struct event_base *base);
+		* event_base_dispatch ()等同于没有设置标志的 event_base_loop ( )。所以event_base_dispatch ()将一直运行,直到没有已经注册的事件了,或者调用 　　　　 event_base_loopbreak()或者 event_base_loopexit()为止。
+　　   	如果想在移除所有已注册的事件之前停止活动的事件循环,可以调用两个稍有不同的函数 。
+		int event_base_loopexit(struct event_base *base,const struct timeval *tv);
+   		int event_base_loopbreak(struct event_base *base);
+
+
+<h3 id="4">4.hiredisAPI简介</h3>
+
+* API:
+	1. 
+
 
 <h3 id="5">5.publisher - 发布者代码分析</h3>
 

@@ -182,6 +182,7 @@ void *CRedisSubscriber::event_thread(void *data)
 
 void *CRedisSubscriber::event_proc()
 {
+	
 	sem_wait(&_event_sem);
 	//开启事件分发，event_base_dispatch会阻塞
 	event_base_dispatch(_event_base);
